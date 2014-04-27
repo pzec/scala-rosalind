@@ -1,4 +1,4 @@
-package scala_one
+package rosalind
 import scala.io.Source
 
 
