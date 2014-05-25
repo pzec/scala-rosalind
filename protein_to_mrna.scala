@@ -11,6 +11,6 @@ object protein_to_mrna extends Application {
   //println(cmap)
   println(smap)
   val str = "MA"
-  val str2 = Source.fromFile(whereami + "/src/assets/rosalind_mrna.txt").getLines.next
+  val str2 = Source.fromFile(whereami + "/src/assets/rosalind_prot.txt").getLines.next
   println((str2.split("").tail.toList:::List("Stop")).map {smap(_).toList.length}.foldLeft(1)((a, b) => (a * b)%1000000))
 }

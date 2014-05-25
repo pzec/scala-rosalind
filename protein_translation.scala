@@ -13,7 +13,8 @@ object protein_translation {
 	  //var codons = Map[String, String]()
 	  //lines.map(l => l.split(" ").toList).foreach(li =>  li match { case List(a, b) => codons += (b->a) })
 	  val codons = lines.map(l => l.split(" ").toList).map{ case a::b::Nil => (a,b)}
-	  									.groupBy(_._1).map{case (k,v) => (k, v.map(_._2).mkString)}
+	  									.groupBy(_._1)
+	  									.map{case (k,v) => (k, v.map(_._2).mkString)}
 	  println(codons)
 	  //val str = "AUGGCCAUGGCGCCCAGAACUGAGAUCAAUAGUACCCGUAUUAACGGGUGA"
 	  str.grouped(3).foreach(a => { if (codons(a) != "Stop") print(codons(a))})
